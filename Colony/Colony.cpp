@@ -2,22 +2,24 @@
 //
 //ant types 0 = queen, 1 = worker
 #include <iostream>
+#include "Structures.h"
 #include "Animals.h"
 using namespace std;
 
 int main()
 {
-    int supplies = 100, day = 0;
-    cout << "First ant...";
+    int day = 0;
+    cout << "First ant colony...";
     cin.get();
-    Ant *ant = new Ant(1, 3, 1);
-    while (ant->getHealth() > 0)
+    //QueenAnt *ant = new QueenAnt(0);
+    Colony* colony = new Colony(10, 1000);
+    while (!ColonyDeathCondition(&colony))
     {
-        ant->eat(supplies);
-        cout << "day " << ++day << " supplies left = " << supplies << endl;
+        colony->advance();
+        day++;
     }
-    cout << "Ant died after " << day << "days...\nHe was " << ant->getAge() << " days old";
-    if ((ant->getHealth()) == 0 || (ant->getAge() == ant->getMaxAge()))
-        delete ant;
+    cout << "Colony perished...\nDays survived: " << day;
+    //cout << "Ant died after " << day << "days...\nHe was " << ant->getAge() << " days old";
+    
 }
 
