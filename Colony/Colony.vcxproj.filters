@@ -18,12 +18,18 @@
     <ClCompile Include="Colony.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="AntFunctions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animals.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Structures.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AntFunctions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

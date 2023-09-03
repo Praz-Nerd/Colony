@@ -139,10 +139,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AntFunctions.cpp" />
     <ClCompile Include="Colony.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animals.h" />
+    <ClInclude Include="AntFunctions.h" />
     <ClInclude Include="Structures.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
