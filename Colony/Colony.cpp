@@ -10,7 +10,7 @@ int main()
     cout << "First ant colony...";
     cin.get();
     //input is workar ant population and starting supplies
-    Colony* colony = new Colony(20, 1000);
+    Colony* colony = new Colony(250, 1000);
     while (!ColonyDeathCondition(colony))
     {
         cout << "Day " << ++day << " supplies " << colony->getSupplies() << " population " << colony->getColonySize() << "\n";

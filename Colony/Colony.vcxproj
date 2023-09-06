@@ -139,8 +139,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Animals.cpp" />
     <ClCompile Include="AntFunctions.cpp" />
     <ClCompile Include="Colony.cpp" />
+    <ClCompile Include="Structures.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animals.h" />

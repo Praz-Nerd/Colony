@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <cmath>
 #include <vector>
 #include "Animals.h"
 #include "AntFunctions.h"
@@ -24,37 +25,8 @@ public:
 		queen = nullptr;
 		std::cout << "Long Live the Queen...\n";
 	}
-	void advance(int day)//basic simulation behaviour
-	{
-		int i;
-		//queen behaviour
-		queen->eat(supplies);
-		//if (day % 2)
-		{
-			for (i = 0; i < (queen->getHealth()*2+1); i++)
-			{
-				if (!(queen->antBirth(larva_population, supplies, counter)))
-					std::cout << "Queen cannot give birth, not enough food...\n";
-			}
-		}	
-		//larvae behaviour
-		for (i = 0; i < larva_population.size(); i++)
-		{
-			if ((!growth_condition(larva_population, i, population)) && (!death_condition(larva_population, i)))
-			{
-				larva_population[i]->eat(supplies);
-			}
-		}
-		//worker ant behaviour
-		for (i = 0; i < population.size(); i++)
-		{
-			if (!death_condition(population, i))
-			{
-				population[i]->eat(supplies);
-				population[i]->procureSupplies(supplies);
-			}
-		}
-	}
+	//basic simulation behaviour
+	void advance(int day);
 	int getColonySize(){ return (population.size() + larva_population.size() + 1); }
 	int getSupplies() { return supplies; }
 	QueenAnt *getQueen() { return queen; }
@@ -66,13 +38,4 @@ private:
 	int supplies;
 };
 //function that deals with deallocating the colony object
-bool ColonyDeathCondition(Colony*& colony)
-{
-	if(death_condition(colony->getQueen()))
-	{
-		delete colony;
-		colony = nullptr;
-		return true;
-	}
-	return false;
-}
+bool ColonyDeathCondition(Colony*& colony);

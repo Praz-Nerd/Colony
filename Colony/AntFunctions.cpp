@@ -50,7 +50,7 @@ bool growth_condition(std::vector<AntLarva*>& larva_population, size_t index, st
 		Ant* ant = new Ant(larva_population[index]->getID());
 		larva_population.erase(larva_population.begin() + index);
 		population.push_back(ant);
-		std::cout << "New ant...\n";
+		//std::cout << "New ant...\n";
 		//delete ant;
 		return true;
 	}
